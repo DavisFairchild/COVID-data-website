@@ -1,3 +1,5 @@
-table {
-  background-color: powderblue;
+table, th, td {
+    background-color: powderblue;
+    border: 1px solid black;
+    border-spacing: 3px;
 }
