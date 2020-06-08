@@ -1,3 +1,19 @@
+* {
+    font-family: helvetica;     
+    font-weight: bolder;
+}
+
+body {
+    background-color: #ffb366;
+}
+
+.content {
+    background-color: #b7dfe1;
+    border-radius: 40px;
+    padding: 20px;
+    margin: 20px;
+}
+
 table, th, td {
     background-color: powderblue;
     border: 1px solid black;
