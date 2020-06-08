@@ -1,7 +1,5 @@
 * {
     font-family: helvetica;     
-    /* font-weight: bolder; */
-    /* ^ Removed because it distorted italics */
     font-size: 18px;
 }
 
@@ -22,7 +20,6 @@ table, th, td {
     border-spacing: 3px;
 }
 
-
 /* TopNav */
 .topnav{
     position: fixed;
@@ -30,19 +27,21 @@ table, th, td {
     width: 100%;
     overflow: auto;
 }
+
 .topnav a {
     float: left;
     text-decoration: none;
     width: 33.33%;
     text-align: center;
 }
+
 #topnav {
     background-color: lightseagreen;
     margin: 0px;
     border: solid blue;
 }
 
-#I_forgot_how_to_select_alt_in_css{
+#I_forgot_how_to_select_alt_in_css {
     height: 370px;
     width: 800px;
 }
@@ -56,8 +55,6 @@ table, th, td {
       text-align: left;
     }
 }
-
-
 
 @keyframes rainbow-text {
     0% {
@@ -213,12 +210,13 @@ table, th, td {
     100% {
       color: #e87d7d;
     }
-  }
-  .sorryNotSorry h1 {
+}
+
+.sorryNotSorry h1 {
     background-color: gray;
     border-radius: 40px;
     padding: 20px;
     margin: 20px;
     animation: rainbow-text 2.5s infinite;
     font-size: 50px;
-  }
+}
