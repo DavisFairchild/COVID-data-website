@@ -1,21 +1,30 @@
 <!DOCTYPE html>
- <html lang="en">
+<html lang="en">
 <head>
+    <div id="topnav" class="topnav">
+        <a id="TopNav1" href="www.google.com" style="text-decoration:none">TopNav Item 1</a>
+        <a id="TopNav2" href="www.google.com" style="text-decoration:none">TopNav Item 2</a>
+        <a id="TopNav3" href="www.google.com" style="text-decoration:none">TopNav Item 3</a>
+    </div>
+    <!-- don't think this is showing up is it?> -->
     <title>Washington State COVID-19 Data</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="content"><h1>Washington State COVID-19 Data</h1></header>
+    <header class="sorryNotSorry"><h1>Washington State COVID-19 Data</h1></header>
     <nav class="content">
-        <a href="index.html">Home</a>
-        <a href="more_info.html">More Information</a>
+        <a>Table of Content:</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="more_info.html">More Information</a></li>
+        </ul>
     </nav>
     <section class="content">
         <table>
-            <caption><strong>Confirmed Cases Per County</strong></caption>
+            <caption><strong>Confirmed Cases Based On Kevin's Random Numbers</strong></caption>
             <tr>
                 <th>County</th>
-                <th>Confirmed Cases</th>
+                <th>"Confirmed" Cases</th>
             </tr>
             <tr>
                 <td>King County</td>
@@ -38,6 +47,17 @@
             </li>
         </ul>
         <img src="washington_state.jpg" alt="washington state map">
+        <!-- blank map: https://commons.wikimedia.org/wiki/File:Simplified_blank_world_map_without_Antartica_(no_borders).svg -->
+        <img src="blank-world-map.png" alt="world map" id="I_forgot_how_to_select_alt_in_css">
     </section>
+    <section class="content">
+        <h2><u>About</u></h2>
+        <a>Alpha version 0.3(?) of a website two friends made as a summer project to collect data on a relevant global event as practice, but also becuase
+            one of the friends realized the other one needed <i>something</i> they could put on their resume and so he got him to actually do this stuff.
+        </a>
+    </section>
+
+    <!-- Javascript
+    <script src="script.js"></script> -->
 </body>
 </html>
