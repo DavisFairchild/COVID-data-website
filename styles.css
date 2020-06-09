@@ -17,10 +17,30 @@ body {
     margin: 20px;
 }
 
-table, th, td {
-    background-color: powderblue;
-    border: 1px solid black;
-    border-spacing: 3px;
+/* Styling for the table */
+th, td {
+    padding: 15px;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+/* Allows mouse to hover over table rows */
+tr:hover {background-color:#FFFFFF;}
+/* Every other table row is colored differently */
+tr:nth-child(odd) {background-color: #ffbf80;}
+
+th {
+    height: 50px;
+    color: white;
+    background-color: #ff7733;
+    font: serif;
+}
+
+td {
+    text-align: left;
 }
 
 /* TopNav */
