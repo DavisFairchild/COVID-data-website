@@ -1,7 +1,19 @@
-// selecting the element for DOM manipulation
-const southAfrica = document.querySelector("#southAfrica");
-
 // retrieving the data from the API
-url = "https://api.covid19api.com/live/country/united-states/status/confirmed";
-const data = fetch(url, {mode: "cors"});
-data.then(response => response.json()).then(data => console.log(data));
+url = "https://covid19-api.org/api/status";
+const data = fetch(url);
+data.then(function(response) {
+        return response.json();
+    })
+    .then(function(response) {
+        // updating the table using DOM manipulation
+        const firstCountry = document.querySelector("#firstCountry");
+        const firstCountryCases = document.querySelector("#firstCountryCases");
+        const secondCountry = document.querySelector("#secondCountry");
+        const secondCountryCases = document.querySelector("#secondCountryCases");
+        firstCountry.textContent = response[0].country;
+        secondCountry.textContent = response[1].country;
+        firstCountryCases.textContent = response[0].cases;
+        secondCountryCases.textContent = response[1].cases;
+        // console.log(response);
+    });
+
