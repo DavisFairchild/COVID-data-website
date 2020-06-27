@@ -6,12 +6,11 @@ data.then(function(response) {
     })
     .then(function(response) {
         // updating the table using DOM manipulation
-        const firstCountry = document.querySelector("#firstCountry");
-        const firstCountryCases = document.querySelector("#firstCountryCases");
-        const secondCountry = document.querySelector("#secondCountry");
-        const secondCountryCases = document.querySelector("#secondCountryCases");
-        firstCountry.textContent = response[0].country;
-        secondCountry.textContent = response[1].country;
-        firstCountryCases.textContent = response[0].cases;
-        secondCountryCases.textContent = response[1].cases;
+        const tableData = document.querySelectorAll('.rowData');
+        let rowNumber = 0;
+        tableData.forEach((row) => {
+            row.firstElementChild.textContent = response[rowNumber].country;
+            row.lastElementChild.textContent = response[rowNumber].cases;
+            rowNumber++;
+        });
     });

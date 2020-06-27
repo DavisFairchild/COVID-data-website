@@ -28,9 +28,9 @@ table {
 }
 
 /* Allows mouse to hover over table rows */
+tr:nth-child(odd) {background-color: #ffbf80;}
 tr:hover {background-color:#FFFFFF;}
 /* Every other table row is colored differently */
-tr:nth-child(odd) {background-color: #ffbf80;}
 
 th {
     height: 50px;
