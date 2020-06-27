@@ -14,6 +14,4 @@ data.then(function(response) {
         secondCountry.textContent = response[1].country;
         firstCountryCases.textContent = response[0].cases;
         secondCountryCases.textContent = response[1].cases;
-        // console.log(response);
     });
-
