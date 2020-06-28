@@ -8,9 +8,12 @@ data.then(function(response) {
         // updating the table using DOM manipulation
         const tableData = document.querySelectorAll('.rowData');
         let rowNumber = 0;
+        let temp = 0;
         tableData.forEach((row) => {
-            row.firstElementChild.textContent = response[rowNumber].country;
+            row.firstElementChild.textContent = response[rowNumber].last_update;
+            document.getElementById("C"+temp).textContent = response[rowNumber].country;
             row.lastElementChild.textContent = response[rowNumber].cases;
             rowNumber++;
+            temp++;            
         });
     });
