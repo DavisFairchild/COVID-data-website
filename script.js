@@ -18,7 +18,7 @@ async function fetchCountry(countryCode) {
 fetchStatus()
     .then(data => {
         let table = document.createElement("table");
-        const numCountries = 50;
+        const numCountries = 206;
         const numCategories = 4;
         const tableHeaders = ["Country", "Confirmed Cases", "Recovered", "Deaths"];
         const jsonMembers = ["country", "cases", "recovered", "deaths"];
@@ -32,15 +32,20 @@ fetchStatus()
             let tr = document.createElement("tr");
             for (let j = 0; j < numCategories; j++) {
                 let td = document.createElement("td");
+                // check to see if the current category is the country name
                 if (j === 0) {
+                    // replace the country code with the country name
                     fetchCountry(data[i][jsonMembers[j]])
-                        .then(data => {
-                            let tdText = document.createTextNode(data.name);
+                        .then(countryData => {
+                            let tdText = document.createTextNode(countryData.name);
                             td.appendChild(tdText);
                         })
                         .catch(error => console.log(error));
                 } else {
-                    let tdText = document.createTextNode(data[i][jsonMembers[j]]);
+                    // data is a number to be inputted into the table
+                    // formatting the number returned from the json for better readability
+                    let formattedNumber = data[i][jsonMembers[j]].toLocaleString();
+                    let tdText = document.createTextNode(formattedNumber);
                     td.appendChild(tdText);
                 }
                 tr.appendChild(td);
