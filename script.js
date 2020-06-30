@@ -7,6 +7,13 @@ async function fetchStatus() {
     return data;
 }
 
+// fetching country data from the API
+async function fetchCountry(countryCode) {
+    const response = await fetch("https://covid19-api.org/api/country/" + countryCode);
+    const data = await response.json();
+    return data;
+}
+
 // updating the table using DOM manipulation
 fetchStatus()
     .then(data => {
@@ -25,8 +32,17 @@ fetchStatus()
             let tr = document.createElement("tr");
             for (let j = 0; j < numCategories; j++) {
                 let td = document.createElement("td");
-                let tdText = document.createTextNode(data[i][jsonMembers[j]]);
-                td.appendChild(tdText);
+                if (j === 0) {
+                    fetchCountry(data[i][jsonMembers[j]])
+                        .then(data => {
+                            let tdText = document.createTextNode(data.name);
+                            td.appendChild(tdText);
+                        })
+                        .catch(error => console.log(error));
+                } else {
+                    let tdText = document.createTextNode(data[i][jsonMembers[j]]);
+                    td.appendChild(tdText);
+                }
                 tr.appendChild(td);
             }
             table.appendChild(tr);
